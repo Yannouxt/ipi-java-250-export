@@ -5,10 +5,14 @@ import com.example.demo.dto.FactureDTO;
 import com.example.demo.service.ClientService;
 import com.example.demo.service.FactureService;
 import com.example.demo.service.export.ExportCSVService;
-import com.example.demo.service.export.ExportFacturesClientXSLXService;
+import com.example.demo.service.export.ExportPDFBirtService;
 import com.example.demo.service.export.ExportPDFITextService;
 import com.example.demo.service.export.ExportXLSXService;
 import com.itextpdf.text.DocumentException;
+
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.assertj.core.util.Files;
+import org.eclipse.birt.report.engine.api.EngineException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @Controller
@@ -38,6 +46,9 @@ public class ExportController {
     
     @Autowired
     private ExportXLSXService exportXSLXService;
+    
+    @Autowired
+    private ExportPDFBirtService exportPDFBirtService;
     
     
     
@@ -72,6 +83,18 @@ public class ExportController {
     	response.setHeader("Content-Disposition", "attachment; filename=\"Facturesclient"+id+".xlsx\"");
         List<FactureDTO> factures = factureService.findFacturesByClient(id);
         exportXSLXService.exportFacturesClient(response.getOutputStream(),factures);	
+    }
+    
+    @GetMapping("/factures/{id}/pdfBirt")
+    public void facturePDFBirt(@PathVariable("id") Long id, HttpServletRequest request, HttpServletResponse response) throws IOException, DocumentException {
+//        response.setContentType("application/pdf");
+//        response.setHeader("Content-Disposition", "attachment; filename=\"facture " + id + ".pdf\"");
+        FactureDTO facture = factureService.findById(id);
+        try {
+			exportPDFBirtService.export(response.getOutputStream(), facture);
+		} catch (EngineException e) {
+			e.printStackTrace();
+		}
     }
     
 

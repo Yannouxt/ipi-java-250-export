@@ -39,6 +39,11 @@ public class InitData {
         article2.setPrix(150.0);
         em.persist(article2);
         
+        Article article3 = new Article();
+        article3.setLibelle("Carte mère BBB 987");
+        article3.setPrix(654.50);
+        em.persist(article3);
+        
         Facture facture2 = new Facture();
         facture2.setClient(client);
         em.persist(facture2);
@@ -46,6 +51,10 @@ public class InitData {
         Facture facture = new Facture();
         facture.setClient(client);
         em.persist(facture);
+        
+        Facture facture3 = new Facture();
+        facture3.setClient(client2);
+        em.persist(facture3);
 
         LigneFacture ligneFacture1 = new LigneFacture();
         ligneFacture1.setFacture(facture);
@@ -59,6 +68,24 @@ public class InitData {
         ligneFacture2.setArticle(article2);
         ligneFacture2.setQuantite(3);
         em.persist(ligneFacture2);
+        
+        LigneFacture ligneFacture3 = new LigneFacture();
+        ligneFacture3.setFacture(facture2);
+        ligneFacture3.setArticle(article3);
+        ligneFacture3.setQuantite(2);
+        em.persist(ligneFacture3);
+        
+        LigneFacture ligneFacture21 = new LigneFacture();
+        ligneFacture3.setFacture(facture3);
+        ligneFacture3.setArticle(article2);
+        ligneFacture3.setQuantite(10);
+        em.persist(ligneFacture21);
+        
+        LigneFacture ligneFacture22 = new LigneFacture();
+        ligneFacture3.setFacture(facture3);
+        ligneFacture3.setArticle(article3);
+        ligneFacture3.setQuantite(50);
+        em.persist(ligneFacture22);
 
     }
 }

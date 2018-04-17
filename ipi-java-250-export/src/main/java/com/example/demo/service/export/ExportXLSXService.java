@@ -10,6 +10,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -68,6 +69,7 @@ public class ExportXLSXService {
 	    int nbFactures = 1;
 
 	    for (FactureDTO facture : factures) {
+	    	 Double montantTotal = 0.0; 
 			 XSSFSheet sheet = workbook.createSheet("Facture "+nbFactures++);
 			 int rowid = 2;
 	         row = sheet.createRow(rowid++);
@@ -112,8 +114,31 @@ public class ExportXLSXService {
 		         cellPrixTotal = row.createCell(5);
 		         cellPrixTotal.setCellValue(ligne.getPrixUnitaire()*ligne.getQuantite()); 
 		         this.borderStyleCell(workbook, cellPrixTotal);
+		         montantTotal+= ligne.getPrixUnitaire()*ligne.getQuantite();
 
 			 }
+	         row = sheet.createRow(rowid++);
+	         Cell cellMontantTotal = row.createCell(2);
+	         cellMontantTotal.setCellValue("TOTAL");
+	         this.borderStyleCell(workbook, cellMontantTotal);
+	         
+	         cellMontantTotal = row.createCell(3);
+	         cellMontantTotal.setCellValue(montantTotal);
+	         this.borderStyleCell(workbook, cellMontantTotal);
+	         
+	         cellMontantTotal = row.createCell(4);
+	         this.borderStyleCell(workbook, cellMontantTotal);
+	         
+	         cellMontantTotal = row.createCell(5);
+	         this.borderStyleCell(workbook, cellMontantTotal);
+	         
+	         sheet.addMergedRegion(new CellRangeAddress(
+	                 cellMontantTotal.getRowIndex(), //first row (0-based)
+	                 cellMontantTotal.getRowIndex(), //last row  (0-based)
+	                 3, //first column (0-based)
+	                 5  //last column  (0-based)
+	         ));
+	        	 
 			 sheet.autoSizeColumn(2);
 			 sheet.autoSizeColumn(3);
 			 sheet.autoSizeColumn(4);
