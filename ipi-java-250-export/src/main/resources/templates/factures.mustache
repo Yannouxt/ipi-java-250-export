@@ -1,0 +1,31 @@
+ {{>header}}
+ <body>
+ 	 <main role="main" class="container">
+	 <hr/>
+	 <h2>Listes des factures</h2>
+	 <hr/>
+	 
+	 {{#factures}}
+	 	<h3> Facture de {{client.nom}} {{client.prenom}}, exporter en <a href="/factures/{{id}}/pdf">pdf</a></h3>
+		<table class="table table-hover">
+		    <thead class="thead-light">
+		    <tr>
+		        <th scope="col">Désignation</th>
+		        <th scope="col">Quantité</th>
+		        <th scope="col">Prix unitaire</th>
+		    </tr>
+		    </thead>
+		    <tbody>
+		    {{#ligneFactures}}
+		        <tr>
+		            <td>{{designation}}</td>
+		            <td>{{quantite}}</td>
+		            <td>{{prixUnitaire}}</td>
+		        </tr>
+		    {{/ligneFactures}}
+		    </tbody>
+		</table>
+	{{/factures}}
+	</main>
+
+ {{>footer}}

@@ -1,0 +1,12 @@
+{
+  "prenom": "Alexandre",
+  "nom": "Petrillo",
+  "items": [
+    {
+      "designation": "Carte mère ASROCK",
+      "quantite": 1,
+      "prixUnitaire": 79.99
+    }
+  ],
+  "total": 79.99
+}

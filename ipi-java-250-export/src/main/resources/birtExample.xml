@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<data>
+	<client>
+		<nom>Laforest</nom>
+		<prenom>Yann</prenom>
+	</client>
+	<facture>
+		<ligneFacture>
+			<libelle>TESTPRODUCT</libelle>
+			<quantite>1</quantite>
+			<prix>150</prix>
+		</ligneFacture>
+		<ligneFacture>
+			<libelle>TESTPRODUCT2</libelle>
+			<quantite>1</quantite>
+			<prix>1501</prix>
+		</ligneFacture>
+	</facture>
+</data>
+

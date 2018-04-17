@@ -1,0 +1,25 @@
+<factureDTO>
+    <nom>PETRILLO</nom>
+    <prenom>Alexandre</prenom>
+    <items>
+        <item>
+            <designation>Carte mère</designation>
+            <type>Pieces</type>
+            <quantite>1</quantite>
+            <prixUnitaire>79.90</prixUnitaire>
+        </item>
+        <item>
+            <designation>Barrette mémoire</designation>
+            <type>Pieces</type>
+            <quantite>12</quantite>
+            <prixUnitaire>10</prixUnitaire>
+        </item>
+        <item>
+            <designation>Montage</designation>
+            <type>Main d'oeuvre</type>
+            <quantite>1</quantite>
+            <prixUnitaire>20</prixUnitaire>
+        </item>
+    </items>
+    <total>110.90</total>
+</factureDTO>

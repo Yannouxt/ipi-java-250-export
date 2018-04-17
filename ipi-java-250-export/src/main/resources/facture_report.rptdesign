@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="Data Source" id="106">
+            <property name="FILELIST">src/main/resources/birtExample.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="LigneFacture" id="107">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">libelle</property>
+                    <text-property name="heading">libelle</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">quantite</property>
+                    <text-property name="heading">quantite</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">prix</property>
+                    <text-property name="heading">prix</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">libelle</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">quantite</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">prix</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">libelle</property>
+                    <property name="nativeName">libelle</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">quantite</property>
+                    <property name="nativeName">quantite</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">prix</property>
+                    <property name="nativeName">prix</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/data/facture/ligneFacture]#:#{libelle;STRING;/libelle},{quantite;STRING;/quantite},{prix;STRING;/prix}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>libelle</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>libelle</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>quantite</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>quantite</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>prix</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>prix</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="NewStyle" id="130">
+            <property name="backgroundColor">#FFFFFF</property>
+            <property name="backgroundRepeat">repeat</property>
+            <property name="fontFamily">"@Arial Unicode MS"</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="marginTop">10%</property>
+            <property name="marginLeft">10pt</property>
+            <property name="marginBottom">10pt</property>
+            <property name="marginRight">10pt</property>
+            <property name="paddingTop">2pt</property>
+            <property name="paddingLeft">2pt</property>
+            <property name="paddingBottom">2pt</property>
+            <property name="paddingRight">2pt</property>
+            <property name="textAlign">left</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="108">
+            <property name="width">7.308333333333334in</property>
+            <property name="dataSet">LigneFacture</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">libelle</property>
+                    <text-property name="displayName">libelle</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["libelle"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">quantite</property>
+                    <text-property name="displayName">quantite</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["quantite"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">prix</property>
+                    <text-property name="displayName">prix</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["prix"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="127">
+                <property name="width">2.658333333333333in</property>
+            </column>
+            <column id="128">
+                <property name="width">2.65in</property>
+            </column>
+            <column id="129">
+                <property name="width">2in</property>
+            </column>
+            <header>
+                <row id="109">
+                    <cell id="110">
+                        <property name="style">NewStyle</property>
+                        <label id="111">
+                            <text-property name="text">Libellé</text-property>
+                        </label>
+                    </cell>
+                    <cell id="112">
+                        <property name="style">NewStyle</property>
+                        <label id="113">
+                            <text-property name="text">Quantité</text-property>
+                        </label>
+                    </cell>
+                    <cell id="114">
+                        <property name="style">NewStyle</property>
+                        <label id="115">
+                            <text-property name="text">Prix</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="116">
+                    <cell id="117">
+                        <property name="style">NewStyle</property>
+                        <data id="118">
+                            <property name="resultSetColumn">libelle</property>
+                        </data>
+                    </cell>
+                    <cell id="119">
+                        <property name="style">NewStyle</property>
+                        <data id="120">
+                            <property name="resultSetColumn">quantite</property>
+                        </data>
+                    </cell>
+                    <cell id="121">
+                        <property name="style">NewStyle</property>
+                        <data id="122">
+                            <property name="resultSetColumn">prix</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="123">
+                    <cell id="124">
+                        <property name="style">NewStyle</property>
+                    </cell>
+                    <cell id="125">
+                        <property name="style">NewStyle</property>
+                    </cell>
+                    <cell id="126">
+                        <property name="style">NewStyle</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>
